@@ -1,0 +1,14 @@
+{
+  "name": "sass-tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node-sass _export.scss -o css"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node-sass": "^3.10.32",
+    "node-sass": "^4.7.2"
+  }
+}
