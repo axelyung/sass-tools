@@ -1,0 +1,13 @@
+// sass-lint:disable no-important
+.v-hidden {
+    visibility: hidden !important;
+}
+
+.v-visible {
+    visibility: visible !important;
+}
+
+.hiding {
+    opacity: 0;
+    position: absolute;
+}

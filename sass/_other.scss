@@ -1,0 +1,52 @@
+@mixin hw($value) {
+    height: $value;
+    width: $value;
+}
+
+@mixin circle($dim) {
+    @include hw($dim);
+    border-radius: $dim / 2; // sass-lint:disable-line variable-for-property
+}
+
+@mixin border-background-color($color) {
+    background-color: $color;
+    border-color: $color;
+}
+
+@mixin media-height-up($min-height) {
+    @media screen and ( min-height: $min-height) {
+        @content
+    }
+}
+
+@mixin media-height-down($min-height) {
+    @media screen and ( max-height: $min-height) {
+        @content
+    }
+}
+
+.bg-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pseudo-el {
+    display: block;
+    position: absolute;
+    content: '';
+}
+
+.before-pseudo::before {
+    @extend .pseudo-el;
+}
+
+.after-pseudo::after {
+    @extend .pseudo-el;
+}
+
+.color-transition {
+    transition-duration: .2s;
+    transition-property: opacity, fill, color, background-color, outline-color, border-color, box-shadow; //transition: fill .2s, color .2s, background-color .2s, outline-color .2s, border-color .2s, opacity .2s;
+}
+

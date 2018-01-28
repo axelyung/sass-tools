@@ -1,0 +1,82 @@
+﻿@mixin padding-lr($padding) {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin padding-tb($padding) {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+
+@mixin margin-lr($margin) {
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+@mixin margin-tb($margin) {
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+// sass-lint:disable no-important
+$types: (
+    m: margin,
+    p: padding
+);
+
+$directions: (
+    t: top,
+    b: bottom,
+    l: left,
+    r: right
+);
+$sizes: (
+    0: 0,
+    half: .5,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4
+);
+
+@each $t-label, $type in $types {
+    @each $s-label, $size in $sizes {
+        .#{$t-label}-#{$s-label} {
+            #{$type}: #{$size}rem !important;
+        }
+    }
+}
+
+@each $t-label, $type in $types {
+    @each $d-label, $direction in $directions {
+        @each $s-label, $size in $sizes {
+            .#{$t-label}-#{$d-label}-#{$s-label} {
+                #{$type}-#{$direction}: #{$size}rem !important;
+            }
+        }
+    }
+}
+
+@each $s-label, $size in $sizes {
+    .m-tb-#{$s-label} {
+        @include margin-tb($size);
+    }
+}
+
+@each $s-label, $size in $sizes {
+    .m-lr-#{$s-label} {
+        @include margin-lr($size);
+    }
+}
+
+@each $s-label, $size in $sizes {
+    .p-tb-#{$s-label} {
+        @include padding-tb($size);
+    }
+}
+
+@each $s-label, $size in $sizes {
+    .p-lr-#{$s-label} {
+        @include padding-tb($size);
+    }
+}
