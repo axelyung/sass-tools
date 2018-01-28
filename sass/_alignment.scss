@@ -41,6 +41,16 @@
     transform: translateX(-50%);
 }
 
+@mixin translate($x, $y) {
+    transform: translate($x, $y);
+}
+@mixin translateX($x) {
+    transform: translate($x, 0);
+}
+@mixin translateY($y) {
+    transform: translate(0, $y);
+}
+
 .p-relative {
     position: relative;
 }
