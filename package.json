@@ -9,6 +9,6 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node-sass": "^3.10.32",
-    "node-sass": "^4.7.2"
+    "node-sass": "^7.0.0"
   }
 }
